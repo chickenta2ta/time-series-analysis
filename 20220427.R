@@ -1,0 +1,16 @@
+library(TSSS)
+x <- as.ts(rnorm(200))
+acf(x, lag = 50)
+l <- period(x, window = 0)
+plot(log10(l$period), type = "l", ylim = c(-4, 1), xaxt = "n")
+x_pos <- c(0, 20, 40, 60, 80, 100)
+x_val <- c(0.0, 0.1, 0.2, 0.3, 0.4, 0.5)
+axis(side = 1, at = x_pos, labels = x_val)
+
+data(Sunspot)
+period(Sunspot, window = 0)
+period(Sunspot, window = 1)
+
+data(BLSALLFOOD)
+period(BLSALLFOOD, window = 0)
+period(BLSALLDOOD, window = 1)
